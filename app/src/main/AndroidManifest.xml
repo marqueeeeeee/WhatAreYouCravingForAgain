@@ -31,6 +31,11 @@
             android:name=".activity.Reservation"
             android:label="@string/title_activity_reservation" >
         </activity>
+        <activity
+            android:theme="@style/AppTheme2"
+            android:name=".activity.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
     </application>
 
 </manifest>

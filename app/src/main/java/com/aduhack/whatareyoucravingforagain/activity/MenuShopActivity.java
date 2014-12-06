@@ -36,12 +36,13 @@ public class MenuShopActivity extends Activity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
-
+    String tag = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_shop);
 
+        tag = getIntent().getStringExtra("tag");
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -159,10 +160,22 @@ public class MenuShopActivity extends Activity {
 
             switch(position) {
                 case 0:
-                    return new MenuShopFragment();
+                    Bundle b = new Bundle();
+                    b.putInt("mode", 0);
+                    b.putString("tag", tag);
+                    MenuShopFragment msf = new MenuShopFragment();
+                    msf.setArguments(b);
+
+                    return msf;
 
                 case 1:
-                    return new MenuShopFragment();
+                    Bundle b2 = new Bundle();
+                    b2.putInt("mode", 1);
+                    b2.putString("tag", tag);
+                    MenuShopFragment msf2 = new MenuShopFragment();
+                    msf2.setArguments(b2);
+
+                    return msf2;
 
             }
 

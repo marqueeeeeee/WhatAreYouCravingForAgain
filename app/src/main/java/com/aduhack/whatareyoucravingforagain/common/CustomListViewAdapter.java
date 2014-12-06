@@ -120,6 +120,7 @@
 		
 		_holder.MainTextView.setText(_items.get(position).MainText);
 		_holder.SubTextView.setText(_items.get(position).SubText);
+        _holder.PriceTextView.setText(_items.get(position).PriceText);
 		
 
 		new SetImage(position, _holder, _items.get(position), _context)
@@ -187,6 +188,7 @@
 		public CircleImageView Thumbnail;
 		public TextView MainTextView;
 		public TextView SubTextView;
+        public TextView PriceTextView;
 		public ImageButton ActionButton;
 		
 		public void initialize(View view)
@@ -194,6 +196,7 @@
 			Thumbnail = (CircleImageView) view.findViewById(R.id.lv_custom_imgView);
 			MainTextView = (TextView) view.findViewById(R.id.lv_custom_mainTextView);
 			SubTextView = (TextView) view.findViewById(R.id.lv_custom_subTextView);
+            PriceTextView = (TextView) view.findViewById(R.id.lv_custom_priceTextView);
 		}
 	}
 }

@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
     }
 
     public void SearchButton (View view) {
-        Intent i = new Intent(this, MenuShopActivity.class);
+        Intent i = new Intent(this, SearchActivity.class);
         startActivity(i);
     }
 

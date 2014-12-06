@@ -36,17 +36,17 @@ public class StaticUtility {
 
     //Reservation
     public static String Reservation_id = "_id";
-    public static String Reservation_restaurant_id = "restaurant_id";
-    public static String Reservation_user_id = "user_id";
-    public static String Reservation_reservation_datetime = "reservation_datetime";
-    public static String Reservation_reservation_pax = "reservation_pax";
+    public static String Reservation_restaurant_id = "restaurantId";
+    public static String Reservation_user_id = "userId";
+    public static String Reservation_reservation_datetime = "reservationDatetime";
+    public static String Reservation_reservation_pax = "reservationPax";
     public static String Reservation_status = "status";
 
     //Advance_Order
     public static String Advance_Order_id = "id";
-    public static String Advance_Order_pickup_datetime = "pickup_datetime";
-    public static String Advance_Order_user_id = "user_id";
-    public static String Advance_Order_reservation_id = "reservation_id";
+    public static String Advance_Order_pickup_datetime = "pickupDatetime";
+    public static String Advance_Order_user_id = "userId";
+    public static String Advance_Order_reservation_id = "reservationId";
     public static String Advance_Order_amountDue = "amountDue";
     public static String Advance_Order_isTogo = "isTogo";
     public static String Advance_Order_status = "status";
@@ -86,7 +86,7 @@ public class StaticUtility {
     public static String order_user_id = "userId";
     public static String order_amountDue = "amountDue";
     public static String order_isTogo = "isToGo";
-    public static String order_items = "items[]";
+    public static String order_items = "menu[]";
     public static String order_qty = "qty[]";
 
 }

@@ -79,11 +79,81 @@ public class DataHelper {
 
 
     //get methods
+    public List<Menu> GetMenusDetails(int id){
+
+        String suery = "SELECT * FROM Menu WHERE restaurant_id = '"+id+"'";
+//        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
+        Cursor c = db.rawQuery(suery, null);
+        List<Menu> restaurants = new ArrayList<Menu>();
+        Menu res;
+// "_id integer primary key autoincrement," +
+//                "restaurant_id text not null," +
+//                "food_name text not null," +
+//                "price text not null," +
+//                "description text not null," +
+//                "tags text not null," +
+//                "remarks text not null," +
+//                "isAvailable text not null);";
+
+        for(int i = 0; i<c.getCount();i++){
+            c.moveToNext();
+            res = new Menu();
+            res.setMenu_id(c.getInt(0));
+            res.setRestaurant_id(c.getString(1));
+            res.setFood_name(c.getString(2));
+            res.setPrice(c.getString(3));
+            res.setDescription(c.getString(4));
+            res.setTags(c.getString(5));
+            res.setRemarks(c.getString(6));
+            res.setIsAvailable(c.getString(7));
+
+            restaurants.add(res);
+        }
+        c.close();
+        return restaurants;
+
+    }
+
+    public List<Menu> GetMenus(String tag){
+
+        String suery = "SELECT * FROM Menu WHERE tags LIKE '%"+tag+"%'";
+//        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
+        Cursor c = db.rawQuery(suery, null);
+        List<Menu> restaurants = new ArrayList<Menu>();
+        Menu res;
+// "_id integer primary key autoincrement," +
+//                "restaurant_id text not null," +
+//                "food_name text not null," +
+//                "price text not null," +
+//                "description text not null," +
+//                "tags text not null," +
+//                "remarks text not null," +
+//                "isAvailable text not null);";
+
+        for(int i = 0; i<c.getCount();i++){
+            c.moveToNext();
+            res = new Menu();
+            res.setMenu_id(c.getInt(0));
+            res.setRestaurant_id(c.getString(1));
+            res.setFood_name(c.getString(2));
+            res.setPrice(c.getString(3));
+            res.setDescription(c.getString(4));
+            res.setTags(c.getString(5));
+            res.setRemarks(c.getString(6));
+            res.setIsAvailable(c.getString(7));
+
+            restaurants.add(res);
+        }
+        c.close();
+        return restaurants;
+
+    }
+
     public List<Restaurant> GetRestaurants(String tag){
 
-        String suery = "SELECT * FROM Restaurants WHERE tags LIKE %?%";
+        String suery = "SELECT * FROM Restaurant WHERE tags LIKE '%"+tag+"%'";
 //        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
-        Cursor c = db.rawQuery(suery, new String[]{tag});
+        Cursor c = db.rawQuery(suery, null);
         List<Restaurant> restaurants = new ArrayList<Restaurant>();
         Restaurant res;
 //        _id integer not null," +
@@ -146,7 +216,7 @@ public class DataHelper {
 
     public Restaurant GetRestaurant(int restaurant_id){
 
-        String suery = "SELECT * FROM Restaurants WHERE restaurant_id="+restaurant_id;
+        String suery = "SELECT * FROM Restaurant WHERE _id='"+restaurant_id+"'";
 //        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
         Cursor c = db.rawQuery(suery, null);
         Restaurant res;
@@ -179,10 +249,10 @@ public class DataHelper {
         return res;
     }
 
-    public List<Menu> GetMenu(int restaurant_id){
+    public Menu GetMenu(int restaurant_id){
 
 
-        String suery = "SELECT * FROM Menu WHERE restaurant_id="+restaurant_id;
+        String suery = "SELECT * FROM Menu WHERE _id='"+restaurant_id+"'";
 //        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
         Cursor c = db.rawQuery(suery, null);
         List<Menu> menu = new ArrayList<Menu>();
@@ -197,10 +267,10 @@ public class DataHelper {
 //                "remarks text not null," +
 //                "isAvailable text not null);";
 
-        for(int i = 0; i<c.getCount();i++){
+        //for(int i = 0; i<c.getCount();i++){
             c.moveToNext();
             _menu = new Menu();
-            _menu.setMenu_id(c.getInt(0));
+            //_menu.setMenu_id(c.getInt(0));
             _menu.setRestaurant_id(c.getString(1));
             _menu.setFood_name(c.getString(2));
             _menu.setPrice(c.getString(3));
@@ -210,9 +280,9 @@ public class DataHelper {
             _menu.setIsAvailable(c.getString(7));
 
             menu.add(_menu);
-        }
+        //}
         c.close();
-        return menu;
+        return _menu;
     }
 
     //add methods

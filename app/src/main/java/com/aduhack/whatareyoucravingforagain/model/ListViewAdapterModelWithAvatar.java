@@ -6,5 +6,7 @@ public class ListViewAdapterModelWithAvatar {
 	public String ImageSrc;
 	public String MainText;
 	public String SubText;
+    public String PriceText;
+
 	
 }
