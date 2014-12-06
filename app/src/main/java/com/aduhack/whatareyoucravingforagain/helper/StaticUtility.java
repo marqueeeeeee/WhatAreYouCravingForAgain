@@ -57,5 +57,36 @@ public class StaticUtility {
     public static String Advance_Order_Item_menu_id = "menu_id";
     public static String Advance_Order_Item_qty = "qty";
 
+    //webpost
+    //user
+    public static String user_first_name = "firstName";
+    public static String user_last_name = "lastName";
+    public static String user_contact_number = "contactNumber";
+    public static String user_email = "email";
+
+    //restaurant_id
+    public static String web_restaurant_id = "restaurantId";
+
+    //reservation
+    public static String reservation_restaurant_id = "restaurantId";
+    public static String reservation_user_id = "userId";
+    public static String reservation_reservation_datetime = "reservationDatetime";
+    public static String reservation_reservation_pax = "reservationPax";
+    public static String reservation_status = "status";
+
+    //rating
+    public static String rating_restaurant_id = "restaurantId";
+    public static String rating_name = "name";
+    public static String rating_rate = "rate";
+    public static String rating_comment = "comment";
+    public static String rating_image_path = "imagePath";
+
+    //order
+    public static String order_pickup_datetime = "pickupDatetime";
+    public static String order_user_id = "userId";
+    public static String order_amountDue = "amountDue";
+    public static String order_isTogo = "isToGo";
+    public static String order_items = "items[]";
+    public static String order_qty = "qty[]";
 
 }

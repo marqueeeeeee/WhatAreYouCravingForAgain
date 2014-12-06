@@ -15,20 +15,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataHelper {
-	private SQLiteDatabase db;
-	private DataSource dataSource;
+    private SQLiteDatabase db;
+    private DataSource dataSource;
 
-	public DataHelper(Context context) {
-		dataSource = new DataSource(context);
-	}
+    public DataHelper(Context context) {
+        dataSource = new DataSource(context);
+    }
 
-	public void open() throws SQLException {
-		db = dataSource.getWritableDatabase();
-	}
+    public void open() throws SQLException {
+        db = dataSource.getWritableDatabase();
+    }
 
-	public void close() {
-		dataSource.close();
-	}
+    public void close() {
+        dataSource.close();
+    }
 
     /*
 	public void AddClasses(ClassModel cm){
@@ -159,19 +159,19 @@ public class DataHelper {
 //        allowAdvanceOrder text not null," +
 //        allowReservation text not null," +
 //        remarks text not null);";
-            c.moveToNext();
-            res = new Restaurant();
-            res.setRestaurant_id(c.getInt(0));
-            res.setRestaurant_name(c.getString(1));
-            res.setAddress(c.getString(2));
-            res.setGeolocation(c.getString(3));
-            res.setTags(c.getString(4));
-            res.setContact_number(c.getString(5));
-            res.setEmail(c.getString(6));
-            res.setOperating_hours(c.getString(7));
-            res.setAllowAdvanceOrder(c.getString(8));
-            res.setAllowReservation(c.getString(9));
-            res.setRemarks(c.getString(10));
+        c.moveToNext();
+        res = new Restaurant();
+        res.setRestaurant_id(c.getInt(0));
+        res.setRestaurant_name(c.getString(1));
+        res.setAddress(c.getString(2));
+        res.setGeolocation(c.getString(3));
+        res.setTags(c.getString(4));
+        res.setContact_number(c.getString(5));
+        res.setEmail(c.getString(6));
+        res.setOperating_hours(c.getString(7));
+        res.setAllowAdvanceOrder(c.getString(8));
+        res.setAllowReservation(c.getString(9));
+        res.setRemarks(c.getString(10));
 
         c.close();
         return res;
@@ -216,6 +216,7 @@ public class DataHelper {
         ContentValues cv;
         for(Restaurant res: restaurants){
             cv = new ContentValues();
+
             cv.put(StaticUtility.Restaurant_id, res.getRestaurant_id());
             cv.put(StaticUtility.Restaurant_restaurant_name, res.getRestaurant_name());
             cv.put(StaticUtility.Restaurant_address, res.getAddress());

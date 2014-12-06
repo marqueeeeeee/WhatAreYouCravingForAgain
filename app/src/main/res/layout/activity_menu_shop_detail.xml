@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aduhack.whatareyoucravingforagain.activity.MenuShopDetail"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/cheese"
+        android:id="@+id/img_view"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_view"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_restaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goldilocks"/>
+
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="111 ASpace Legaspi St. Makati, Metro Manila, Philippines"
+            android:singleLine="false"/>
+
+        <TextView
+            android:id="@+id/tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:text="09163100214"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/ReservceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Reserve"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/OrderAheadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Order Ahead"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/Detail_MenuListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"></ListView>
+
+</LinearLayout>

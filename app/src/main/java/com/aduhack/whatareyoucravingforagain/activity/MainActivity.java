@@ -1,16 +1,40 @@
 package com.aduhack.whatareyoucravingforagain.activity;
 
 import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.aduhack.whatareyoucravingforagain.R;
+import com.aduhack.whatareyoucravingforagain.common.TileProvider;
+import com.aduhack.whatareyoucravingforagain.database.DataHelper;
 import com.aduhack.whatareyoucravingforagain.fragments.MainFragment;
 import com.aduhack.whatareyoucravingforagain.fragments.MenuShopFragment;
+import com.aduhack.whatareyoucravingforagain.helper.HttpManager;
+import com.aduhack.whatareyoucravingforagain.model.ListViewAdapterModelWithAvatar;
+import com.aduhack.whatareyoucravingforagain.model.OrderItem;
+import com.aduhack.whatareyoucravingforagain.model.OrderModel;
+import com.aduhack.whatareyoucravingforagain.model.RatingModel;
+import com.aduhack.whatareyoucravingforagain.model.ReservationModel;
+import com.aduhack.whatareyoucravingforagain.model.UserModel;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -19,9 +43,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //somtehing
         setActionbar();
         launchMainFragment();
+
+        new DownloadData(getApplicationContext()).execute();
     }
 
 
@@ -58,7 +83,37 @@ public class MainActivity extends Activity {
     }
 
     public void SearchButton (View view) {
-        getFragmentManager().beginTransaction().replace(R.id.container, new MenuShopFragment()).commit();
+        Intent i = new Intent(this, MenuShopActivity.class);
+        startActivity(i);
+    }
+
+
+    private class DownloadData extends AsyncTask<Void, Void, Void>
+    {
+
+        HttpManager hm;
+        DataHelper dh;
+        public DownloadData(Context context) {
+            dh = new DataHelper(context);
+            dh.open();
+            hm = new HttpManager(dh);
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            hm.getRestaurants();
+            hm.getMenu();
+            hm.getRestaurantImage();
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            dh.close();
+       }
+
     }
 
 }

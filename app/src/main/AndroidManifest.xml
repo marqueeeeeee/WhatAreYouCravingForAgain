@@ -19,6 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.MenuShopActivity"
+            android:label="@string/title_activity_menu_shop" >
+        </activity>
+        <activity
+            android:name=".activity.MenuShopDetail"
+            android:label="@string/title_activity_menu_shop_detail" >
+        </activity>
+        <activity
+            android:name=".activity.Reservation"
+            android:label="@string/title_activity_reservation" >
+        </activity>
     </application>
 
 </manifest>

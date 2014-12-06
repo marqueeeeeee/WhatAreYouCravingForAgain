@@ -194,7 +194,6 @@
 			Thumbnail = (CircleImageView) view.findViewById(R.id.lv_custom_imgView);
 			MainTextView = (TextView) view.findViewById(R.id.lv_custom_mainTextView);
 			SubTextView = (TextView) view.findViewById(R.id.lv_custom_subTextView);
-			ActionButton = (ImageButton) view.findViewById(R.id.lv_custom_button);
 		}
 	}
 }
