@@ -120,6 +120,7 @@ public class DataHelper {
     }
 
     public List<RestaurantImage> GetRestaurantImages(int restaurant_id){
+
         String suery = "SELECT * FROM Restaurant_Image where restaurant_id="+restaurant_id;
         Cursor c = db.rawQuery(suery,null);
         List<RestaurantImage> restaurants = new ArrayList<RestaurantImage>();
@@ -144,6 +145,7 @@ public class DataHelper {
     }
 
     public Restaurant GetRestaurant(int restaurant_id){
+
         String suery = "SELECT * FROM Restaurants WHERE restaurant_id="+restaurant_id;
 //        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
         Cursor c = db.rawQuery(suery, null);
@@ -178,6 +180,8 @@ public class DataHelper {
     }
 
     public List<Menu> GetMenu(int restaurant_id){
+
+
         String suery = "SELECT * FROM Menu WHERE restaurant_id="+restaurant_id;
 //        Cursor c = db.query("Restaurants", null, null, null, null, null, null, null);
         Cursor c = db.rawQuery(suery, null);
@@ -213,6 +217,9 @@ public class DataHelper {
 
     //add methods
     public void AddRestaurants(List<Restaurant> restaurants){
+
+        db.delete("Restaurant", null,null);
+
         ContentValues cv;
         for(Restaurant res: restaurants){
             cv = new ContentValues();
@@ -236,6 +243,8 @@ public class DataHelper {
     }
 
     public void AddMenu(List<Menu> menus){
+
+        db.delete("Menu", null, null);
         ContentValues cv;
         for(Menu _menu: menus){
             cv = new ContentValues();
@@ -255,6 +264,9 @@ public class DataHelper {
     }
 
     public void AddImages(List<RestaurantImage> images){
+
+        db.delete("Restaurant_Image", null, null);
+
         ContentValues cv;
         for(RestaurantImage _image: images){
             cv = new ContentValues();

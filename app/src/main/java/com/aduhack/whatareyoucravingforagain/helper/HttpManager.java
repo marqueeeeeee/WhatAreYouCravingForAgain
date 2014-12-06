@@ -46,17 +46,17 @@ public class HttpManager {
     private static String url = "";
 
 
-    private static String url_get_restaurant = "http://172.20.10.13/WhatYourCravingFor/restaurant/getRestaurant";
-    private static String url_get_image = "http://172.20.10.13/WhatYourCravingFor/images/getImages";
-    private static String url_get_menu = "http://172.20.10.13/WhatYourCravingFor/menu/getMenu";
-    private static String url_get_ratings = "http://172.20.10.13/WhatYourCravingFor/ratings/getRatings";
+    private static String url_get_restaurant = "http://172.20.10.13/WebApp/restaurant/getRestaurant";
+    private static String url_get_image = "http://172.20.10.13/WebApp/images/getImages";
+    private static String url_get_menu = "http://172.20.10.13/WebApp/menu/getMenu";
+    private static String url_get_ratings = "http://172.20.10.13/WebApp/ratings/getRatings";
 
-    private static String url_register_user = "http://172.20.10.13/WhatYourCravingFor/users/registerUsers";
-    private static String url_get_reservation = "http://172.20.10.13/WhatYourCravingFor/reservation/getReservation";
-    private static String url_set_order = "http://172.20.10.13/WhatYourCravingFor/advance_order/setOrder";
+    private static String url_register_user = "http://172.20.10.13/WebApp/users/registerUsers";
+    private static String url_get_reservation = "http://172.20.10.13/WebApp/reservation/getReservation";
+    private static String url_set_order = "http://172.20.10.13/WebApp/advance_order/setOrder";
 
-    private static String url_set_rating = "http://172.20.10.13/WhatYourCravingFor/ratings/setRatings";
-    private static String url_set_reservation = "http://172.20.10.13/WhatYourCravingFor/reservation/setReservation";
+    private static String url_set_rating = "http://172.20.10.13/WebApp/ratings/setRatings";
+    private static String url_set_reservation = "http://172.20.10.13/WebApp/reservation/setReservation";
 
 
     private HttpHelper _httpHelper;
