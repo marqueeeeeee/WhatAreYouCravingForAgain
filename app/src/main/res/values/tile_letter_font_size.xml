@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="letter_tile_colors">
+        <item>#e53935</item>
+        <item>#e91e63</item>
+        <item>#fb8c00</item>
+        <item>#f4511e</item>
+        <item>#388e3c</item>
+        <item>#1976d2</item>
+        <item>#304ffe</item>
+        <item>#6a1b9a</item>
+    </array>
+    <array name="choices">
+        <item>Always Allow</item>
+        <item>Always Deny</item>
+        <item>Notify Me</item>
+    </array>
+
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ListViewAvatarWith2TextAndIcon"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="@dimen/ListViewAvatarSize"
+            android:layout_height="@dimen/ListViewAvatarSize"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:visibility="visible" >
+
+            <com.aduhack.whatareyoucravingforagain.common.CircleImageView
+                android:id="@+id/lv_custom_imgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="16dp" >
+
+            <TextView
+                android:id="@+id/lv_custom_mainTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@string/fontStyleMain"
+                android:text="@string/app_name"
+                android:textColor="#000"
+                android:textSize="@dimen/ListViewMainTextSize" />
+
+            <TextView
+                android:id="@+id/lv_custom_subTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@string/fontStyleSub"
+                android:text="@string/app_name"
+                android:textColor="@color/SubTextColor"
+                android:textSize="@dimen/ListViewSubTextSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="right|top"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/lv_custom_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

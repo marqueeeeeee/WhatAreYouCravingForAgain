@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aduhack.whatareyoucravingfor.fragments.MainFragment"
+    android:background="@color/background">
+
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:elevation="2dp"/>
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle3"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        android:elevation="2dp"/>
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle1"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="2dp"/>
+
+
+    <Button
+        android:layout_width="@dimen/search_cirle_4th"
+        android:layout_height="@dimen/search_cirle_4th"
+        android:background="@drawable/search_button_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="5dp"/>
+
+
+    <Button
+        android:layout_width="@dimen/search_cirle_3rd"
+        android:layout_height="@dimen/search_cirle_3rd"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/search_button_circle2"
+        android:elevation="10dp"/>
+
+    <Button
+        android:layout_width="@dimen/search_cirle_2nd"
+        android:layout_height="@dimen/search_cirle_2nd"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/search_button_circle3"
+        android:elevation="15dp"
+        android:onClick="SearchButton"/>
+
+
+    <Button
+        android:layout_width="@dimen/search_cirle_1st"
+        android:layout_height="@dimen/search_cirle_1st"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/search_button_circle4"
+        android:elevation="20dp"
+        android:onClick="SearchButton" />
+
+
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle5"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:elevation="2dp"/>
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle6"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="60dp"
+        android:elevation="2dp"/>
+
+    <ImageButton
+        android:layout_width="@dimen/mini_circle"
+        android:layout_height="@dimen/mini_circle"
+        android:background="@drawable/mini_circle4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="2dp"/>
+
+</RelativeLayout>
