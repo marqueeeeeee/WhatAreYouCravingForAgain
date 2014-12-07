@@ -116,4 +116,14 @@ public class MainActivity extends Activity {
 
     }
 
+    public void predefinedTagsClicked(View v){
+        String tags = String.valueOf(v.getTag());
+        Intent i = new Intent(getApplicationContext(), MenuShopActivity.class);
+        i.putExtra("tag", tags);
+
+        startActivity(i);
+    }
+
+
+
 }

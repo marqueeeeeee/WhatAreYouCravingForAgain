@@ -16,7 +16,15 @@ public class Restaurant {
     private String allowAdvanceOrder;
     private String allowReservation;
     private String remarks;
+    private String metersAway;
 
+    public String getMetersAway() {
+        return metersAway;
+    }
+
+    public void setMetersAway(String metersAway) {
+        this.metersAway = metersAway;
+    }
 
     public int getRestaurant_id() {
         return Restaurant_id;

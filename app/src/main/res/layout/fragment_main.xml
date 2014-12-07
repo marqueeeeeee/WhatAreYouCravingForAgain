@@ -11,6 +11,8 @@
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle2"
         android:layout_centerHorizontal="true"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginTop="25dp"
         android:elevation="2dp"/>
 
@@ -20,6 +22,8 @@
         android:background="@drawable/mini_circle3"
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginRight="10dp"
         android:layout_marginTop="60dp"
         android:elevation="2dp"/>
@@ -28,6 +32,8 @@
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle1"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="10dp"
         android:elevation="2dp"/>
@@ -86,6 +92,8 @@
         android:background="@drawable/mini_circle5"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginBottom="25dp"
         android:elevation="2dp"/>
 
@@ -96,6 +104,8 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="60dp"
         android:elevation="2dp"/>
@@ -105,6 +115,8 @@
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle4"
         android:layout_alignParentBottom="true"
+        android:onClick="predefinedTagsClicked"
+        android:tag="meat"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="10dp"
         android:elevation="2dp"/>

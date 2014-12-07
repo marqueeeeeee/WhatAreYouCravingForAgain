@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.aduhack.whatareyoucravingforagain.R;
 import com.aduhack.whatareyoucravingforagain.common.CustomListViewAdapter;
 import com.aduhack.whatareyoucravingforagain.database.DataHelper;
+import com.aduhack.whatareyoucravingforagain.helper.LocationHelper;
 import com.aduhack.whatareyoucravingforagain.model.ListViewAdapterModelWithAvatar;
 import com.aduhack.whatareyoucravingforagain.model.Restaurant;
 
@@ -27,6 +28,7 @@ public class MenuShopDetail extends Activity {
     ArrayList<ListViewAdapterModelWithAvatar> lvadp;
 
     TextView MainText, SubText, SubSubText;
+    private LocationHelper locationHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class MenuShopDetail extends Activity {
 
 
         MenuList = (ListView) findViewById(R.id.Detail_MenuListView);
+        locationHelper = new LocationHelper(this.getApplicationContext());
+        locationHelper.setUpGPS();
+        locationHelper.showCurrentLocation();
+
 
         ReserveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +91,10 @@ public class MenuShopDetail extends Activity {
             setupButtons(1, 1);
             Restaurant restaurant = dh.GetRestaurant(id);
 
+
+            String loc = "14.5547290, 121.0244450";
+            double distance = locationHelper.getDistanceInMiles(loc);
+            restaurant.setMetersAway(String.format("%.2f", distance) + " m");
             MainText.setText(restaurant.getRestaurant_name());
             SubText.setText(restaurant.getAddress());
             SubSubText.setText(restaurant.getContact_number());

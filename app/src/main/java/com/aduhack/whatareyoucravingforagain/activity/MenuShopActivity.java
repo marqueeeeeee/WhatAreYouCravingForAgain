@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.aduhack.whatareyoucravingforagain.R;
 import com.aduhack.whatareyoucravingforagain.fragments.MenuShopFragment;
+import com.aduhack.whatareyoucravingforagain.helper.LocationHelper;
 
 public class MenuShopActivity extends Activity {
 
@@ -37,13 +38,14 @@ public class MenuShopActivity extends Activity {
      */
     ViewPager mViewPager;
     String tag = "";
+
+    private LocationHelper locationHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_shop);
 
         tag = getIntent().getStringExtra("tag");
-
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
