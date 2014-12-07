@@ -14,5 +14,7 @@
     <string name="title_activity_menu_shop_detail">MenuShopDetail</string>
     <string name="title_activity_reservation">Reservation</string>
     <string name="title_activity_search">What are you craving for?</string>
+    <string name="title_activity_order_ahead">OrderAheadActivity</string>
+    <string name="title_activity_add_qty_dialog">AddQtyDialog</string>
 
 </resources>

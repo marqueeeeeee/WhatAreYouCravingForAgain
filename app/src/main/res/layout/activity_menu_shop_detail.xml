@@ -42,7 +42,17 @@
             android:inputType="phone"
             android:text="09163100214"/>
 
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200 m"/>
 
+        <TextView
+            android:id="@+id/minutesaway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.8 - 3.6 min"/>
     </LinearLayout>
 
 

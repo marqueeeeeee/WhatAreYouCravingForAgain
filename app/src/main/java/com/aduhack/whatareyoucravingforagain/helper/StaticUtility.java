@@ -88,5 +88,5 @@ public class StaticUtility {
     public static String order_isTogo = "isToGo";
     public static String order_items = "menu[]";
     public static String order_qty = "qty[]";
-
+    public static String order_restaurant_id = "restaurantId";
 }

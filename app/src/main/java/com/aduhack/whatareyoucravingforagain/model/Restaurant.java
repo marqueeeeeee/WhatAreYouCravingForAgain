@@ -17,6 +17,15 @@ public class Restaurant {
     private String allowReservation;
     private String remarks;
     private String metersAway;
+    private String minutesAway;
+
+    public String getMinutesAway() {
+        return minutesAway;
+    }
+
+    public void setMinutesAway(String minutesAway) {
+        this.minutesAway = minutesAway;
+    }
 
     public String getMetersAway() {
         return metersAway;

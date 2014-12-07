@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -39,11 +40,23 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+
+    private SharedPreferences sp;
+    public static String PREF = "WARFPREF";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setActionbar();
+
+        sp = getSharedPreferences(PREF, MODE_PRIVATE);
+        boolean b = sp.getBoolean("isLoggedIn", false);
+
+        if(!b) {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+
         launchMainFragment();
 
         new DownloadData(getApplicationContext()).execute();
@@ -60,7 +73,7 @@ public class MainActivity extends Activity {
     private void launchMainFragment() {
 
         MainFragment mf = new MainFragment();
-        getFragmentManager().beginTransaction().addToBackStack("Main").replace(R.id.container, mf).commit();
+        getFragmentManager().beginTransaction().replace(R.id.container, mf).commit();
     }
 
     @Override

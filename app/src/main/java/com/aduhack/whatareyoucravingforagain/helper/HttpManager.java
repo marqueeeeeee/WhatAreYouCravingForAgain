@@ -47,17 +47,19 @@ public class HttpManager {
     private static String url = "";
 
 
-    private static String url_get_restaurant = "http://172.20.10.13/webapp/restaurant/getRestaurant";
-    private static String url_get_image = "http://172.20.10.13/webapp/images/getImages";
-    private static String url_get_menu = "http://172.20.10.13/webapp/menu/getMenu";
-    private static String url_get_ratings = "http://172.20.10.13/webapp/ratings/getRatings";
+    private static String Domain = "http://marqueepi.no-ip.biz/atnt/webapp/index.php";
 
-    private static String url_register_user = "http://172.20.10.13/webapp/users/registerUsers";
-    private static String url_get_reservation = "http://172.20.10.13/webapp/reservation/getReservation";
-    private static String url_set_order = "http://172.20.10.13/webapp/advance_order/setOrder";
+    private static String url_get_restaurant = Domain +"/restaurant/getRestaurant";
+    private static String url_get_image = Domain + "/images/getImages";
+    private static String url_get_menu = Domain + "/menu/getMenu";
+    private static String url_get_ratings = Domain + "/ratings/getRatings";
 
-    private static String url_set_rating = "http://172.20.10.13/webapp/ratings/setRatings";
-    private static String url_set_reservation = "http://172.20.10.13/webapp/reservation/setReservation";
+    private static String url_register_user = Domain + "/users/registerUsers";
+    private static String url_get_reservation = Domain + "/reservation/getReservation";
+    private static String url_set_order = Domain + "/advance_order/setOrder";
+
+    private static String url_set_rating = Domain + "/ratings/setRatings";
+    private static String url_set_reservation = Domain + "/reservation/setReservation";
 
 
     private HttpHelper _httpHelper;
@@ -68,20 +70,21 @@ public class HttpManager {
         _database = _data;
     }
 
-    public void registerUser(UserModel user){
+    public String registerUser(UserModel user){
         List<NameValuePair> value = new ArrayList<NameValuePair>(4);
-
+        String result = "";
         value.add(new BasicNameValuePair(StaticUtility.user_first_name, user.getFirst_name()));
         value.add(new BasicNameValuePair(StaticUtility.user_last_name, user.getLast_name()));
         value.add(new BasicNameValuePair(StaticUtility.user_contact_number, user.getContact_number()));
         value.add(new BasicNameValuePair(StaticUtility.user_email, user.getEmail()));
         try{
-            String result = EntityUtils.toString(_httpHelper.postResponse(url_register_user, value));
+           result = EntityUtils.toString(_httpHelper.postResponse(url_register_user, value));
 
-            String result2 = result;
+
         }catch(IOException e){
             e.printStackTrace();
         }
+        return result;
     }
 
     public void getRestaurants(){
@@ -292,16 +295,19 @@ public class HttpManager {
     public void setOrder(OrderModel order){
         List<OrderItem> orderItems = order.getOrderItems();
 
-        int n = 4+(orderItems.size()*2);
+        int n = 5+(orderItems.size()*2);
         List<NameValuePair> value = new ArrayList<NameValuePair>(n);
 
         value.add(new BasicNameValuePair(StaticUtility.order_user_id, order.getUser_id()));
         value.add(new BasicNameValuePair(StaticUtility.order_pickup_datetime, order.getPickup_datetime()));
         value.add(new BasicNameValuePair(StaticUtility.order_amountDue, order.getAmountDue()));
         value.add(new BasicNameValuePair(StaticUtility.order_isTogo, order.getIsTogo()));
+        value.add(new BasicNameValuePair(StaticUtility.order_restaurant_id, order.getReservation_id()));
         for(OrderItem item: orderItems){
             value.add(new BasicNameValuePair(StaticUtility.order_items, item.getMenu_id() ));
             value.add(new BasicNameValuePair(StaticUtility.order_qty, item.getQty()));
+
+
         }
 
         try{

@@ -43,7 +43,7 @@ public class Reservation extends Activity {
             public void onClick(View v) {
                 displayProgressBar();
                 ReservationModel rm = new ReservationModel();
-                rm.setUser_id("1000");
+                rm.setUser_id("1");
                 rm.setReservation_pax(pax.getText().toString());
                 rm.setReservation_datetime(timePicker.getCurrentHour() + ":" + timePicker.getCurrentMinute());
                 rm.setRestaurant_id(id + "");

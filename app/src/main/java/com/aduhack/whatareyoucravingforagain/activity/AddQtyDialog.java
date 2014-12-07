@@ -8,64 +8,49 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TimePicker;
 
 import com.aduhack.whatareyoucravingforagain.R;
 
-public class SearchActivity extends Activity {
+public class AddQtyDialog extends Activity {
 
-    Button SearchButton;
-    EditText EditTextSearch;
+    EditText QtyET;
+    Button SaveButton;
+    TimePicker timepicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_add_qty_dialog);
 
-        SearchButton = (Button) findViewById(R.id.SearchButton);
-        EditTextSearch = (EditText) findViewById(R.id.SearchEditText);
+        QtyET = (EditText) findViewById(R.id.editTextQty);
+        SaveButton = (Button) findViewById(R.id.buttonQty);
+        timepicker = (TimePicker) findViewById(R.id.timePickerqty);
 
-        SearchButton.setOnClickListener(new View.OnClickListener() {
+        SaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String time = timepicker.getCurrentHour().toString() + ":" + timepicker.getCurrentMinute().toString();
 
-
-                String res = EditTextSearch.getText().toString();
-
-                if(res.length() != 0) {
-
-                    Intent i = new Intent(getApplicationContext(), MenuShopActivity.class);
-                    i.putExtra("tag", res);
-
-                    startActivity(i);
-                }
-                else {
-
-                    Toast.makeText(getApplicationContext(), "Try again! :)", Toast.LENGTH_SHORT).show();
-                }
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("result", QtyET.getText().toString());
+                returnIntent.putExtra("Id", getIntent().getIntExtra("Id", 0));
+                returnIntent.putExtra("time", time);
+                returnIntent.putExtra("Price", getIntent().getStringExtra("Price"));
+                setResult(RESULT_OK, returnIntent);
+                finish();
 
             }
         });
 
-
-
-
     }
 
-
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.search, menu);
+        getMenuInflater().inflate(R.menu.add_qty_dialog, menu);
         return true;
     }
 

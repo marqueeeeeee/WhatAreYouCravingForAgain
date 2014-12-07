@@ -23,7 +23,7 @@ public class LocationListenerHelper  implements LocationListener {
             String loc = "My current location is: "
                     + location.getLatitude() + "-" + location.getLongitude();
 
-            Toast.makeText(_context, loc, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(_context, loc, Toast.LENGTH_SHORT).show();
 
         }
 

@@ -7,36 +7,46 @@
 
 
     <ImageButton
+        android:id="@+id/mini1"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle2"
         android:layout_centerHorizontal="true"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="cheese"
         android:layout_marginTop="25dp"
-        android:elevation="2dp"/>
+        android:elevation="1dp"
+        android:src="@drawable/chees"
+        android:scaleType="centerInside"/>
 
     <ImageButton
+        android:id="@+id/mini2"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle3"
         android:layout_centerHorizontal="true"
         android:layout_alignParentRight="true"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="chicken"
         android:layout_marginRight="10dp"
         android:layout_marginTop="60dp"
-        android:elevation="2dp"/>
+        android:src="@drawable/chicken"
+        android:scaleType="centerInside"
+        android:padding="5dp"
+        android:elevation="1dp"/>
 
     <ImageButton
+        android:id="@+id/mini3"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle1"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="donut"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="10dp"
-        android:elevation="2dp"/>
+        android:src="@drawable/donut"
+        android:scaleType="centerInside"
+        android:elevation="1dp"/>
 
 
     <Button
@@ -87,17 +97,21 @@
 
 
     <ImageButton
+        android:id="@+id/mini4"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle5"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="candy"
+        android:src="@drawable/choco"
+        android:scaleType="centerInside"
         android:layout_marginBottom="25dp"
-        android:elevation="2dp"/>
+        android:elevation="1dp"/>
 
     <ImageButton
+        android:id="@+id/mini5"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle6"
@@ -105,20 +119,25 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="coffee"
+        android:src="@drawable/coffee"
+        android:scaleType="centerInside"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="60dp"
-        android:elevation="2dp"/>
+        android:elevation="1dp"/>
 
     <ImageButton
+        android:id="@+id/mini6"
         android:layout_width="@dimen/mini_circle"
         android:layout_height="@dimen/mini_circle"
         android:background="@drawable/mini_circle4"
         android:layout_alignParentBottom="true"
         android:onClick="predefinedTagsClicked"
-        android:tag="meat"
+        android:tag="cake"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="10dp"
-        android:elevation="2dp"/>
+        android:src="@drawable/cake"
+        android:scaleType="centerInside"
+        android:elevation="1dp"/>
 
 </RelativeLayout>

@@ -23,11 +23,12 @@ import java.util.List;
 public class MenuShopDetail extends Activity {
 
     int mode, id;
+    Long id2;
     Button ReserveButton, OrderAheadButton;
     ListView MenuList;
     ArrayList<ListViewAdapterModelWithAvatar> lvadp;
 
-    TextView MainText, SubText, SubSubText;
+    TextView MainText, SubText, SubSubText, DistanceText, MinutesAwayText;
     private LocationHelper locationHelper;
 
     @Override
@@ -39,6 +40,8 @@ public class MenuShopDetail extends Activity {
         MainText = (TextView) findViewById(R.id.tv_restaurantName);
         SubText = (TextView) findViewById(R.id.tv_address);
         SubSubText = (TextView) findViewById(R.id.tv_contact);
+        DistanceText = (TextView)findViewById(R.id.distance);
+        MinutesAwayText = (TextView)findViewById(R.id.minutesaway);
         ReserveButton = (Button) findViewById(R.id.ReservceButton);
         OrderAheadButton = (Button) findViewById(R.id.OrderAheadButton);
 
@@ -76,6 +79,17 @@ public class MenuShopDetail extends Activity {
             @Override
             public void onClick(View v) {
 
+                if(mode==0) {
+                    Intent i = new Intent(getApplicationContext(), MenuShopDetail.class);
+                    i.putExtra("Id", id2);
+                    i.putExtra("mode", 1);
+
+                    startActivity(i);
+                }else {
+                    Intent i = new Intent(getApplicationContext(), OrderAheadActivity.class);
+                    i.putExtra("Id", id);
+                    startActivity(i);
+                }
             }
         });
 
@@ -86,18 +100,25 @@ public class MenuShopDetail extends Activity {
             MainText.setText(menu.food_name);
             SubText.setText(menu.description);
             SubSubText.setText(menu.price);
+
+            OrderAheadButton.setVisibility(View.VISIBLE);
+            OrderAheadButton.setText("Go to shop details");
+
+            id2 = Long.parseLong(menu.restaurant_id);
         }
         else {
             setupButtons(1, 1);
             Restaurant restaurant = dh.GetRestaurant(id);
 
 
-            String loc = "14.5547290, 121.0244450";
-            double distance = locationHelper.getDistanceInMiles(loc);
+            double distance = locationHelper.getDistanceInMiles(restaurant.getGeolocation());
             restaurant.setMetersAway(String.format("%.2f", distance) + " m");
+            restaurant.setMinutesAway(getMinutesAway(distance));
             MainText.setText(restaurant.getRestaurant_name());
             SubText.setText(restaurant.getAddress());
             SubSubText.setText(restaurant.getContact_number());
+            DistanceText.setText(restaurant.getMetersAway());
+            MinutesAwayText.setText(restaurant.getMinutesAway());
 
             List<com.aduhack.whatareyoucravingforagain.model.Menu> menu = dh.GetMenusDetails(id);
 
@@ -117,6 +138,11 @@ public class MenuShopDetail extends Activity {
 
     }
 
+    private String getMinutesAway(double distance){
+        double min = (6*distance)/500;
+        double max = (6*distance)/1000;
+        return String.format("%.2f",max)+"-"+String.format("%.2f",min)+" minutes away";
+    }
 
     private void setupButtons(int reserveStatus, int orderAheadStatus) {
 
