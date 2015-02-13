@@ -62,7 +62,7 @@ public class HttpManager {
     private static String url_set_reservation = Domain + "/reservation/setReservation";
 
 
-    private HttpHelper _httpHelper;
+    public HttpHelper _httpHelper;
     private DataHelper _database;
 
     public HttpManager(DataHelper _data){

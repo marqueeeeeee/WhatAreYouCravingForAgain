@@ -59,6 +59,9 @@ public class MainActivity extends Activity {
 
         launchMainFragment();
 
+
+
+
         new DownloadData(getApplicationContext()).execute();
     }
 
@@ -114,9 +117,14 @@ public class MainActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... params) {
-            hm.getRestaurants();
-            hm.getMenu();
-            hm.getRestaurantImage();
+
+            hm._httpHelper.updateConnectedFlags(getApplicationContext());
+
+            if(hm._httpHelper.isConnected()) {
+                hm.getRestaurants();
+                hm.getMenu();
+                hm.getRestaurantImage();
+            }
 
             return null;
         }
